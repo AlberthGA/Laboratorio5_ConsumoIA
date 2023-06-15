@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   dart_openai: ^1.8.0
   markdown_widget: ^2.0.0+1
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -54,7 +55,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  assets:
+      - assets/.env
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
