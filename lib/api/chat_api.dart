@@ -1,14 +1,14 @@
 import 'package:dart_openai/dart_openai.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../models/chat_message.dart';
-import '../secrets.dart';
 
 class ChatApi {
   static const _model = 'gpt-3.5-turbo';
 
   ChatApi() {
-    OpenAI.apiKey = openAiApiKey;
-    OpenAI.organization = openAiOrg;
+    OpenAI.apiKey = dotenv.env['openAiApiKey'].toString();
+    OpenAI.organization = dotenv.env['openAiOrg'].toString();
   }
 
   Future<String> completeChat(List<ChatMessage> messages) async {

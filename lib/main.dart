@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'api/chat_api.dart';
 import 'chat_page.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: "assets/.env");
   runApp(ChatApp(chatApi: ChatApi()));
 }
 
 class ChatApp extends StatelessWidget {
-  const ChatApp({required this.chatApi, super.key});
+  const ChatApp({required this.chatApi, Key? key}) : super(key: key);
 
   final ChatApi chatApi;
 

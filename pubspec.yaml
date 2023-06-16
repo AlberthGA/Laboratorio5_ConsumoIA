@@ -38,6 +38,7 @@ dependencies:
   dart_openai: ^1.8.0
   markdown_widget: ^2.0.0+1
   flutter_dotenv: ^5.0.2
+  flutter_html: ^2.1.0
 
 dev_dependencies:
   flutter_test:

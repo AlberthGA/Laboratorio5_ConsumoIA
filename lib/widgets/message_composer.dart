@@ -22,12 +22,19 @@ class MessageComposer extends StatelessWidget {
           children: [
             Expanded(
               child: !awaitingResponse
-                  ? TextField(
-                      controller: _messageController,
-                      onSubmitted: onSubmitted,
-                      decoration: const InputDecoration(
-                        hintText: 'Write your message here...',
-                        border: InputBorder.none,
+                  ? const Center(
+                      child: TextField(
+                        enabled: false,
+                        decoration: InputDecoration(
+                          labelText: 'Enviar petición...',
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                          labelStyle: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          alignLabelWithHint: true,
+                        ),
                       ),
                     )
                   : const Row(
@@ -40,7 +47,7 @@ class MessageComposer extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.all(16),
-                          child: Text('Fetching response...'),
+                          child: Text('Generando mensaje...'),
                         ),
                       ],
                     ),
